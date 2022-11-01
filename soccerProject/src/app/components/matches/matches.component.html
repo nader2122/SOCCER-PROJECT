@@ -1,0 +1,22 @@
+
+ 
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 mx-auto text-center">
+          <h1 class="text-white">Matches</h1>
+        </div>
+      </div>
+    </div>
+  
+
+
+<div class="container">
+      
+
+    <div class="row">
+      <div class="col-lg-12" *ngFor="let m of matchs">
+        
+       <app-match [childMatch]="m" ></app-match>
+      </div>
+    </div>
+  </div>

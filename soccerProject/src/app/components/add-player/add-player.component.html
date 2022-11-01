@@ -1,0 +1,139 @@
+<div class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div>
+                    <h1 style="text-align: center; margin-top: 50px;">{{title}}</h1>
+
+                </div>
+
+                <form  [formGroup]="addPlayerForm" style="margin-top: 100px;">
+                    <div class="form-group">
+
+                        <input type="text" class="form-control" 
+                        formControlName="firstName"
+                        placeholder="First Name"
+                        name="firstName" [(ngModel)]="player.firstName"
+                        >
+                        
+
+
+
+                        <div *ngIf="addPlayerForm.controls['firstName'].invalid && (addPlayerForm.controls['firstName'].dirty ||addPlayerForm.controls['firstName'].touched )" class="text-danger">
+                         
+                            <div *ngIf="addPlayerForm.controls['firstName'].errors.required">
+                                       first Name is required
+                            </div>
+                            <div *ngIf="addPlayerForm.controls['firstName'].errors.minlength">
+                                first Name must have minimum 3 caracter
+                     </div>
+                        </div>
+
+                    </div>
+                    <div>
+                    <input type="text" class="form-control" 
+                    formControlName="lastName"
+                    placeholder="Last Name"
+                    
+                    [(ngModel)]="player.lastName"
+                    >
+                    <div *ngIf="addPlayerForm.controls['lastName'].invalid && (addPlayerForm.controls['lastName'].dirty ||addPlayerForm.controls['lastName'].touched )" class="text-danger">
+                         
+                        <div *ngIf="addPlayerForm.controls['lastName'].errors.required">
+                                   last Name is required
+                        </div>
+                        <div *ngIf="addPlayerForm.controls['lastName'].errors.minlength">
+                            last Name must have minimum 3 caracter
+                 </div>
+                    </div>
+                </div>
+                    <div class="form-group">
+                        
+                        <input type="text" class="form-control" 
+                        formControlName="post"
+                        placeholder="Post"
+                        name="post"
+                        [(ngModel)]="player.post"
+                        >
+
+
+                        <div *ngIf="addPlayerForm.controls['post'].invalid && (addPlayerForm.controls['post'].dirty ||addPlayerForm.controls['post'].touched )" class="text-danger">
+                         
+                            <div *ngIf="addPlayerForm.controls['post'].errors.required">
+                                        post is required
+                            </div>
+                            <div *ngIf="addPlayerForm.controls['post'].errors.minlength">
+                                post must have minimum 2 caracter
+                     </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        
+                        <input type="text" class="form-control" 
+                        formControlName="team"
+                        placeholder="Team"
+                        name="team"
+                        [(ngModel)]="player.team"
+                        >
+
+
+                        <div *ngIf="addPlayerForm.controls['team'].invalid && (addPlayerForm.controls['team'].dirty ||addPlayerForm.controls['team'].touched )" class="text-danger">
+                         
+                            <div *ngIf="addPlayerForm.controls['team'].errors.required">
+                                       team is required
+                            </div>
+                            <div *ngIf="addPlayerForm.controls['team'].errors.minlength">
+                               team must have minimum 3 caracter
+                     </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        
+                        <input type="number" class="form-control" 
+                        formControlName="nTshirt"
+                        placeholder="n° Tshirt"
+                        name="nTshirt"
+                        [(ngModel)]="player.nTshirt"
+                        >
+
+                        <div *ngIf="addPlayerForm.controls['nTshirt'].invalid && (addPlayerForm.controls['nTshirt'].dirty ||addPlayerForm.controls['nTshirt'].touched )" class="text-danger">
+                         
+                            <div *ngIf="addPlayerForm.controls['nTshirt'].errors.required">
+                                       nTshirt is required
+                            </div>
+                            <div *ngIf="addPlayerForm.controls['nTshirt'].errors.maxlength">
+                                nTshirt must have 2 number
+                     </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <input type="date" class="form-control" 
+                        formControlName="dateOfBirth"
+                        placeholder="Date Of Birth"
+                        name="dateOfBirth"
+                        [(ngModel)]="player.dateOfBirth"
+                        >
+
+                        <div *ngIf="addPlayerForm.controls['dateOfBirth'].invalid && (addPlayerForm.controls['dateOfBirth'].dirty ||addPlayerForm.controls['dateOfBirth'].touched )" class="text-danger">
+                         
+                            <div *ngIf="addPlayerForm.controls['dateOfBirth'].errors.required">
+                                       date of birth is required
+                            </div>
+                            <div *ngIf="addPlayerForm.controls['dateOfBirth'].errors.minlength">
+                                date of birth not exist
+                     </div>
+                        </div>
+                    </div>
+                      <div>
+                           <button class="btn btn-outline-success" (click)="save(addPlayerForm.value)">{{title}}</button>
+                        </div>
+
+                 </form>
+                           </div>
+
+</div>
+</div>
+</div>

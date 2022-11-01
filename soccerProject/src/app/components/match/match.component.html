@@ -1,0 +1,91 @@
+<div class="d-flex team-vs bgs mt-3">
+    <span class="score"><span
+      [ngClass]="{
+        'orange':childMatch.scoreOne < childMatch.scoreTwo ,
+        'yellow':childMatch.scoreOne == childMatch.scoreTwo,
+        'green': childMatch.scoreOne > childMatch.scoreTwo
+      }"
+      >{{childMatch.scoreOne}}
+    </span>-<span
+    [ngClass]="{
+      'orange':childMatch.scoreTwo < childMatch.scoreOne ,
+      'yellow':childMatch.scoreTwo == childMatch.scoreOne,
+      'green': childMatch.scoreTwo > childMatch.scoreOne
+    }"
+    >{{childMatch.scoreTwo}}</span></span>
+    <div class="team-1 w-50">
+      <div class="team-details w-100 text-center">
+        <img src="assets/images/logo_1.png" alt="Image" class="img-fluid">
+    
+      
+        <h3 *ngIf="childMatch.scoreOne > childMatch.scoreTwo">
+          {{childMatch.teamOne}} 
+          <span 
+          [ngClass]="{
+            'orange':childMatch.scoreOne < childMatch.scoreTwo ,
+            'yellow':childMatch.scoreOne == childMatch.scoreTwo,
+            'green': childMatch.scoreOne > childMatch.scoreTwo
+          }">(win)</span> 
+        </h3>
+        <h3 *ngIf="childMatch.scoreOne < childMatch.scoreTwo">
+          {{childMatch.teamOne}} 
+          <span
+          [ngClass]="{
+            'orange':childMatch.scoreOne < childMatch.scoreTwo ,
+            'yellow':childMatch.scoreOne == childMatch.scoreTwo,
+            'green': childMatch.scoreOne > childMatch.scoreTwo
+          }">(lost)</span> 
+        </h3>
+        <h3 *ngIf="childMatch.scoreOne == childMatch.scoreTwo">
+          {{childMatch.teamOne}} 
+          <span
+          [ngClass]="{
+            'orange':childMatch.scoreOne < childMatch.scoreTwo ,
+            'yellow':childMatch.scoreOne == childMatch.scoreTwo,
+            'green': childMatch.scoreOne > childMatch.scoreTwo
+          }"
+          >(drow)</span> 
+        </h3>
+      
+      
+        </div>
+    </div>
+    <div class="team-2 w-50">
+      <div class="team-details w-100 text-center">
+        <img src="assets/images/logo_2.png" alt="Image" class="img-fluid">
+
+        
+        <h3 *ngIf="childMatch.scoreTwo > childMatch.scoreOne">
+          {{childMatch.teamTwo}} 
+          <span
+          [ngClass]="{
+            'orange':childMatch.scoreTwo < childMatch.scoreOne ,
+            'yellow':childMatch.scoreTwo == childMatch.scoreOne,
+            'green': childMatch.scoreTwo > childMatch.scoreOne
+          }"
+          >(win)</span> 
+        </h3>
+        <h3 *ngIf="childMatch.scoreTwo < childMatch.scoreOne">
+          {{childMatch.teamTwo}} 
+          <span
+          [ngClass]="{
+            'orange':childMatch.scoreTwo < childMatch.scoreOne ,
+            'yellow':childMatch.scoreTwo == childMatch.scoreOne,
+            'green': childMatch.scoreTwo > childMatch.scoreOne
+          }"
+          >(lost)</span> 
+        </h3>
+        <h3 *ngIf="childMatch.scoreTwo == childMatch.scoreOne">
+          {{childMatch.teamTwo}} 
+          <span
+          [ngClass]="{
+            'orange':childMatch.scoreTwo < childMatch.scoreOne ,
+            'yellow':childMatch.scoreTwo == childMatch.scoreOne,
+            'green': childMatch.scoreTwo > childMatch.scoreOne
+          }"
+          >(drow)</span> 
+        </h3>
+        
+      </div>
+    </div>
+  </div>
