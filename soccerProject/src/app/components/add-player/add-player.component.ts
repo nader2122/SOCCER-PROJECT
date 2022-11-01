@@ -76,6 +76,14 @@ export class AddPlayerComponent implements OnInit {
 this.playerService.updatePlayer(this.player).subscribe(
   (data)=>{
     console.log(data.message);
+    this.playerService.getAllPlayers().subscribe(
+      (data)=>{
+        console.log(data.players);
+        
+        this.player = data.players
+        
+      }
+    )
   }
 )
 

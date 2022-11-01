@@ -81,6 +81,12 @@ if (this.id) {
   this.matchService.updateMatch(this.match).subscribe(
     (data)=>{
       console.log(data.message);
+      this.matchService.getAllMatch().subscribe(
+        (data)=>{
+          console.log(data.matchs);
+          this.match = data.matchs
+        }
+      )
     }
   )
 
